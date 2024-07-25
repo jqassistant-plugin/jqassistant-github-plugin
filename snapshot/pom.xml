@@ -73,7 +73,7 @@
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <version>1.18.34</version>
+            <version>1.18.2</version>
             <scope>provided</scope>
         </dependency>
 
@@ -81,7 +81,7 @@
         <dependency>
             <groupId>org.kohsuke</groupId>
             <artifactId>github-api</artifactId>
-            <version>1.314</version>
+            <version>1.323</version>
         </dependency>
 
         <!-- Test dependencies -->
