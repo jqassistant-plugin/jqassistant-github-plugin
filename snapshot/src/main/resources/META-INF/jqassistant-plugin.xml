@@ -1,0 +1,27 @@
+<jqassistant-plugin xmlns="http://schema.jqassistant.org/plugin/v1.10"
+                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                    xsi:schemaLocation="http://schema.jqassistant.org/plugin/v1.10 https://schema.jqassistant.org/plugin/jqassistant-plugin-v1.10.xsd"
+                    name="jQAssistant GitHub Plugin" id="jqa.plugin.github"
+                    version="${project.version}">
+    <description>Provides a scanner for GitHub.</description>
+    <model>
+        <class>org.jqassistant.plugin.github.model.GitHub</class>
+        <class>org.jqassistant.plugin.github.model.GitHubBranch</class>
+        <class>org.jqassistant.plugin.github.model.GitHubCommit</class>
+        <class>org.jqassistant.plugin.github.model.GitHubIssue</class>
+        <class>org.jqassistant.plugin.github.model.GitHubLabel</class>
+        <class>org.jqassistant.plugin.github.model.GitHubMilestone</class>
+        <class>org.jqassistant.plugin.github.model.GitHubRelease</class>
+        <class>org.jqassistant.plugin.github.model.GitHubTag</class>
+        <class>org.jqassistant.plugin.github.model.GitHubRepository</class>
+        <class>org.jqassistant.plugin.github.model.GitHubUser</class>
+        <class>org.jqassistant.plugin.github.model.GitHubPullRequest</class>
+    </model>
+    <scope>
+        <class>org.jqassistant.plugin.github.scanner.GitHubScope</class>
+    </scope>
+    <scanner>
+        <class>org.jqassistant.plugin.github.scanner.GitHubIssueScannerPlugin</class>
+        <class>org.jqassistant.plugin.github.scanner.GHRepositoryScannerPlugin</class>
+    </scanner>
+</jqassistant-plugin>

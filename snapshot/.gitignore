@@ -1,0 +1,13 @@
+# Java:
+target/
+dependency-reduced-pom.xml
+
+# JetBrains - IntelliJ:
+.idea/
+*.iml
+
+# jQAssistant execution:
+run/
+test-project/
+jqassistant/
+
