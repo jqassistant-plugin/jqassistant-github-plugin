@@ -1,4 +1,5 @@
 = jQAssistant GitHub Plugin
+:icons: font
 
 This is a GitHub scanner for [jQAssistant](https://jqassistant.org/).
 It enables jQAssistant to scan and analyze GitHub repositories.
@@ -11,15 +12,15 @@ To be able to use the plug-in, it must be specified as a plug-in to jQAssistant.
 ----
 jqassistant:
   plugins:
-    - group-id: org.jqassistant.plugin <1>
+    - group-id: org.jqassistant.plugin # <1>
       artifact-id: jqassistant-github-plugin
       version: ${jqassistant.github-plugin.version}
   scan:
     properties:
-      github.repository.branch: master <2>
+      github.repository.branch: master # <2>
     include:
       urls:
-        - github:repository::https://github.com/shopizer-ecommerce/shopizer <3>
+        - github:repository::https://github.com/shopizer-ecommerce/shopizer # <3>
 ----
 <1> Dependency to the GitHub plugin
 <2> The branch to scan
