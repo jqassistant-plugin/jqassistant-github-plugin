@@ -38,7 +38,7 @@ class GraphBuilder {
 
         // branch dependent
         importBranch(ghRepository, gitHubRepository, branch);
-        importPullRequests(ghRepository, gitHubRepository, branch); // first import PRs, because they'll also be returned when fetching issues
+        importPullRequests(ghRepository, gitHubRepository); // first import PRs, because they'll also be returned when fetching issues
 
         // branch independent
         importMilestones(ghRepository, gitHubRepository);
@@ -61,9 +61,9 @@ class GraphBuilder {
         }
     }
 
-    private void importPullRequests(GHRepository repository, GitHubRepository gitHubRepository, String branch) {
+    private void importPullRequests(GHRepository repository, GitHubRepository gitHubRepository) {
         List<GitHubPullRequest> pullRequests = new LinkedList<>();
-        for (GHPullRequest ghPullRequest : repository.queryPullRequests().base(branch).list()) {
+        for (GHPullRequest ghPullRequest : repository.queryPullRequests().state(GHIssueState.ALL).list()) {
             log.debug("Found pull request: {}", ghPullRequest.getNumber());
             pullRequests.add(cacheEndpoint.findOrCreatePullRequest(ghPullRequest));
         }
