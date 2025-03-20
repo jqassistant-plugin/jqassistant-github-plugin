@@ -35,6 +35,10 @@
         <tag>HEAD</tag>
     </scm>
 
+    <properties>
+        <sonar.projectKey>jqassistant-plugin_jqassistant-github-plugin</sonar.projectKey>
+    </properties>
+
     <dependencies>
         <dependency>
             <groupId>com.buschmais.jqassistant.plugin</groupId>
