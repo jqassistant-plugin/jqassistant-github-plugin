@@ -1,9 +1,21 @@
 = jQAssistant GitHub Plugin
+:icons: font
 
 This is a GitHub scanner for [jQAssistant](https://jqassistant.org/).
 It enables jQAssistant to scan and analyze GitHub repositories.
 
 == Using the jQAssistant GitHub Plugin
+
+[NOTE]
+====
+This plugin requires authentication to the GitHub API by one of the options of the underlying https://hub4j.github.io/github-api/[GitHub API Library], i.e., via
+
+* A property file in the user home directory (`~/.github`), or
+* Environment variables, e.g.,
+
+GITHUB_OAUTH:: An API token with at least `repo:read` permissions.
+GITHUB_LOGIN:: The username on GitHub (a login name is _mandatory_, though a token should be enough for authorization).
+====
 
 To be able to use the plug-in, it must be specified as a plug-in to jQAssistant. Additionally, at least one GitHub repository needs to be configured to be scanned. Optionally, the branch to scan may be configured using the scanner property `github.repository.branch`. This property defaults to `main`.
 
@@ -11,15 +23,15 @@ To be able to use the plug-in, it must be specified as a plug-in to jQAssistant.
 ----
 jqassistant:
   plugins:
-    - group-id: org.jqassistant.plugin <1>
+    - group-id: org.jqassistant.plugin # <1>
       artifact-id: jqassistant-github-plugin
       version: ${jqassistant.github-plugin.version}
   scan:
     properties:
-      github.repository.branch: master <2>
+      github.repository.branch: master # <2>
     include:
       urls:
-        - github:repository::https://github.com/shopizer-ecommerce/shopizer <3>
+        - github:repository::https://github.com/shopizer-ecommerce/shopizer # <3>
 ----
 <1> Dependency to the GitHub plugin
 <2> The branch to scan
